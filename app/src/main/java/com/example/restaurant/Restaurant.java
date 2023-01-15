@@ -1,25 +1,30 @@
 package com.example.restaurant;
 
 public class Restaurant {
-     String name;
-     String city;
-     String category;
-     String photo;
-    // int price;
-//     int numRatings;
-//     double avgRating;
+   private   String name;
+   private   String city;
+   private   String category;
+    private String photo;
+    private String price;
+
 
     public Restaurant() {
     }
 
-    public Restaurant(String name, String city, String category, String photo) {
+    public Restaurant(String name, String city, String category, String photo,String price) {
         this.name = name;
         this.city = city;
         this.category = category;
         this.photo = photo;
-      //  this.price = price;
-//        this.numRatings = numRatings;
-//        this.avgRating = avgRating;
+        this.price=price;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public String getName() {
@@ -54,27 +59,5 @@ public class Restaurant {
         this.photo = photo;
     }
 
-//    public int getPrice() {
-//        return price;
-//    }
-//
-//    public void setPrice(int price) {
-//        this.price = price;
-//    }
 
-//    public int getNumRatings() {
-//        return numRatings;
-//    }
-//
-//    public void setNumRatings(int numRatings) {
-//        this.numRatings = numRatings;
-//    }
-//
-//    public double getAvgRating() {
-//        return avgRating;
-//    }
-//
-//    public void setAvgRating(double avgRating) {
-//        this.avgRating = avgRating;
-//    }
 }

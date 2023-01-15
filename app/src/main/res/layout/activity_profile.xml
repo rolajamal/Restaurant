@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".Registration">
+    tools:context=".Profile">
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -22,94 +22,57 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints,NotSibling" />
 
-    <EditText
-        android:id="@+id/et_name"
+    <TextView
+        android:id="@+id/name_pro"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
-        android:background="#FFFFFF"
         android:ems="10"
         android:hint="name"
         android:inputType="textPersonName"
-        android:paddingStart="20dp"
-        android:textColorHint="#5E1209"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/et_country"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:ems="10"
 
-        android:entries="@array/country"
-
-        android:hint="country"
-        android:paddingStart="10dp"
-        android:textColorHint="#5E1209"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name" />
-
-    <EditText
-        android:id="@+id/et_Email"
+    <TextView
+        android:id="@+id/password_pro"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textPersonName"
-        android:paddingStart="20dp"
-        android:textColorHint="#5E1209"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_country" />
-
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/white"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
-        android:paddingStart="20dp"
-        android:textColorHint="#5E1209"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_Email" />
+        app:layout_constraintTop_toBottomOf="@+id/name_pro" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_Reg"
+    <TextView
+        android:id="@+id/email_pro"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="#5E1209"
-        android:text="Register"
-        android:textAllCaps="false"
-        android:textColor="#FFFBFB"
-        android:textSize="16sp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/et_password"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_pro" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/name_pro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

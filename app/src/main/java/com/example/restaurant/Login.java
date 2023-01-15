@@ -29,7 +29,7 @@ public class Login extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
         //هين ازا المستخدم موجود مسبقا فوتني ع الصفحة عطول
-        if (firebaseUser!=null){
+      if (firebaseUser!=null){
             startActivity(new Intent(getApplicationContext(),restaurant_Activity.class));
 
         }
@@ -65,6 +65,8 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()){
 
                             Log.d("LoginActivity",task.getResult().getUser().toString());
+                            startActivity(new Intent(getApplicationContext(), restaurant_Activity.class));
+
 
                             //غير هيك طلعلي رسالة الخطأ
                         }else {

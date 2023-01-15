@@ -3,6 +3,7 @@ package com.example.restaurant;
 import android.content.Context;
 import android.view.LayoutInflater;
 
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,58 +14,60 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.restaurant.databinding.ItemBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyViewModel> {
-
+public class Adaptar extends RecyclerView.Adapter<Adaptar.MyViewModel> {
     List<Restaurant>restaurantList;
     Context context;
 
-    public Adapter(List<Restaurant> restaurantList, Context context) {
+
+
+
+
+    public Adaptar(List<Restaurant> restaurantList, Context context) {
         this.restaurantList = restaurantList;
         this.context = context;
     }
 
-    @NonNull
-    @Override
     public MyViewModel onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemBinding binding=ItemBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemBinding binding=ItemBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
+
         return new MyViewModel(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewModel holder, int position) {
-        Restaurant restaurant=restaurantList.get(position);
+        int pos=position;
+        Restaurant restaurant=restaurantList.get(pos);
         holder.name.setText(restaurant.getName());
-       // holder.price.setText(restaurant.getPrice());
-        holder.category.setText(restaurant.getCategory());
         holder.city.setText(restaurant.getCity());
-        Glide.with(context)
-                .load(restaurant.getPhoto()).optionalCircleCrop()
-                .into(holder.img);
+        holder.category.setText(restaurant.getCategory());
+        holder.price.setText(restaurant.getPrice());
+        Glide.with(context).load(restaurant.getPhoto()).into(holder.imgFood);
+
 
 
 
     }
+
 
     @Override
     public int getItemCount() {
         return restaurantList.size();
     }
 
-    public class MyViewModel extends RecyclerView.ViewHolder {
-        ImageView img;
-        TextView name,category,city;
+    public class MyViewModel extends RecyclerView.ViewHolder{
+        ImageView imgFood,imgFav;
+        TextView name,city,category,price;
 
 
         public MyViewModel(@NonNull ItemBinding binding) {
             super(binding.getRoot());
-
-            img=binding.image;
+            imgFood=binding.image;
+            imgFav=binding.imgFav;
             name=binding.name;
-           // price=binding.price;
             category=binding.category;
+            price=binding.price;
             city=binding.city;
         }
     }
